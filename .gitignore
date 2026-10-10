@@ -1,0 +1,25 @@
+# Gradle / Kotlin
+.gradle/
+.kotlin/
+build/
+local.properties
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Saídas do build (APK vai para o GitHub Releases, não para o repositório)
+*.apk
+*.aab
+captures/
+
+# Chaves de assinatura — NUNCA commitar
+*.jks
+*.keystore
+keystore.properties
+*.b64
+
+# Sistema
+.DS_Store
+Thumbs.db
