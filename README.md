@@ -165,15 +165,16 @@ gh secret set KEY_PASSWORD
 ### 3. Publicar uma versão
 
 1. Em `app/build.gradle.kts`, aumente o `versionCode` (sempre +1; o Android recusa atualizar para um número igual ou menor) e ajuste o `versionName`. **A tag precisa ser igual ao `versionName` com um `v` na frente** (`versionName = "1.5.0"` → tag `v1.5.0`). O app compara as duas para saber se há atualização, e o CI recusa a tag se forem diferentes.
-2. Commit e push na `main`.
-3. Crie e envie a tag:
+2. Em `CHANGELOG.md`, escreva uma seção `## 1.5.0` com o que mudou. Esse texto vira a descrição da Release, e o CI recusa a tag se a seção não existir.
+3. Commit e push na `main`.
+4. Crie e envie a tag:
 
    ```bash
    git tag v1.5.0
    git push origin v1.5.0
    ```
 
-4. Acompanhe em **Actions**. Quando terminar, o APK `Tilim-v1.5.0.apk` estará em **Releases**.
+5. Acompanhe em **Actions**. Quando terminar, o APK `Tilim-v1.5.0.apk` estará em **Releases**.
 
 ### Assinar com a chave de release localmente (opcional)
 

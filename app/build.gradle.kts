@@ -12,8 +12,8 @@ android {
         applicationId = "com.clevs.tilim"
         minSdk = 26
         targetSdk = 36
-        versionCode = 7
-        versionName = "1.0.0"
+        versionCode = 8
+        versionName = "1.6.0"
     }
 
     // Chave de release vem de variáveis de ambiente (CI ou local); sem elas, cai na chave de debug.
