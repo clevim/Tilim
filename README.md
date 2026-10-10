@@ -1,6 +1,29 @@
-# Tilim 🔔
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/logo-escuro.svg">
+    <img src="docs/logo.svg" alt="Tilim" height="96">
+  </picture>
+</p>
 
-**Agenda sonora para Android, feita para pessoas idosas.**
+<p align="center"><strong>Agenda sonora para Android, feita para pessoas idosas.</strong></p>
+
+<p align="center">
+  <a href="https://github.com/clevim/Tilim/releases/latest"><img src="https://img.shields.io/github/v/release/clevim/Tilim?label=vers%C3%A3o&color=B5502E" alt="Versão"></a>
+  <a href="https://github.com/clevim/Tilim/actions/workflows/android.yml"><img src="https://github.com/clevim/Tilim/actions/workflows/android.yml/badge.svg" alt="Build"></a>
+  <img src="https://img.shields.io/badge/Android-8.0%2B-B5502E" alt="Android 8.0 ou mais novo">
+</p>
+
+<p align="center">
+  <a href="https://github.com/clevim/Tilim/releases/latest"><strong>⬇ Baixar o APK</strong></a>
+  ·
+  <a href="#instalar-no-celular-de-quem-vai-usar">Como instalar</a>
+  ·
+  <a href="#deploy-github-actions">Publicar versão</a>
+</p>
+
+---
+
+<img src="docs/icone.svg" alt="" width="88" align="right">
 
 O Tilim lê os compromissos do Google Agenda que já está no celular e, na hora certa, toca um **alarme alto em tela cheia**, com vibração e voz lendo o compromisso. Não tem conta, servidor nem IA: tudo fica no aparelho.
 
@@ -71,16 +94,28 @@ adb install -r app/build/outputs/apk/release/app-release.apk
 
 > Sem as variáveis de assinatura (ver abaixo), o `assembleRelease` assina com a **chave de debug**. Serve para testar, mas não para distribuir.
 
+## Identidade visual
+
+| | |
+|---|---|
+| <img src="docs/icone.svg" width="64" alt="Ícone do Tilim"> | **Ícone**: sino recortado e inclinado, "como se tivesse acabado de tocar". |
+| Cores | Terracota `#B5502E` · Creme `#F3EDE4` · Tinta `#2B2420` |
+| Fonte | [Lexend](https://fonts.google.com/specimen/Lexend) (feita para leitura fácil) |
+
+Os arquivos ficam em `docs/`: `icone.svg`, `logo.svg` (fundo claro) e `logo-escuro.svg` (fundo escuro). O desenho do sino é o mesmo de `app/src/main/res/drawable/ic_launcher_foreground.xml`.
+
 ## Estrutura
 
 ```
 app/src/main/java/com/clevs/tilim/
-  MainActivity.kt   telas (Compose): lista do dia, novo/editar compromisso, ajustes
+  MainActivity.kt   telas (Compose): preparação passo a passo, lista do dia, novo/editar, ajustes
   Agenda.kt         leitura e escrita no Google Agenda (CalendarContract)
   Avisos.kt         cálculo e agendamento dos alarmes
   Toque.kt          alarme em tela cheia: som, vibração e voz
   Widget.kt         widget do próximo compromisso
+  Atualizar.kt      procura versão nova no GitHub Releases e instala
 app/src/main/res/raw/   toques
+docs/               ícone e logo (SVG) usados neste README
 tools/
   gerar_sons.py     gera os toques próprios (sirene, bipe, campainha)
   baixar_sons.sh    baixa e padroniza os toques de terceiros (precisa de ffmpeg)
