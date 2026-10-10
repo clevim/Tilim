@@ -174,7 +174,7 @@ gh secret set KEY_PASSWORD
    git push origin v1.5.0
    ```
 
-5. Acompanhe em **Actions**. Quando terminar, o APK `Tilim-v1.5.0.apk` estará em **Releases**.
+5. Acompanhe em **Actions**. Quando terminar, a Release aparece em **Releases** como **rascunho (draft)**, com o `Tilim-v1.5.0.apk` anexado. Revise o texto e clique em **Publish release**. Só depois disso os celulares recebem a atualização.
 
 ### Assinar com a chave de release localmente (opcional)
 

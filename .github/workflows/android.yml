@@ -60,4 +60,5 @@ jobs:
         run: |
           awk -v v="${GITHUB_REF_NAME#v}" '/^## /{p = ($2 == v); next} p' CHANGELOG.md > notas.md
           [ -s notas.md ] || { echo "::error::CHANGELOG.md sem seção ## ${GITHUB_REF_NAME#v}"; exit 1; }
-          gh release create "$GITHUB_REF_NAME" Tilim-*.apk --title "Tilim $GITHUB_REF_NAME" --notes-file notas.md
+          # nasce em draft: revisar e clicar em "Publish release"; o app só enxerga a versão depois de publicada
+          gh release create "$GITHUB_REF_NAME" Tilim-*.apk --title "Tilim $GITHUB_REF_NAME" --notes-file notas.md --draft
