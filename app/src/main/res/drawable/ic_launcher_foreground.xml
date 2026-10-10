@@ -1,0 +1,9 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
+    <!-- inclinado como se tivesse acabado de tocar -->
+    <group android:rotation="9" android:pivotX="54" android:pivotY="54">
+        <path android:fillColor="@color/terracota" android:pathData="M49.5,31a4.5,4.5 0,1 1,9 0a4.5,4.5 0,1 1,-9 0z" />
+        <path android:fillColor="@color/terracota" android:pathData="M54,33C44,33 40.5,40 38.5,50C36.5,60 35.5,64 30.5,68C28,70 28,72.5 30.5,73L77.5,73C80,72.5 80,70 77.5,68C72.5,64 71.5,60 69.5,50C67.5,40 64,33 54,33z" />
+        <path android:fillColor="@color/terracota" android:pathData="M52,80.5a5,5 0,1 1,10 0a5,5 0,1 1,-10 0z" />
+    </group>
+</vector>

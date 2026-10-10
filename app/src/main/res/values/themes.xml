@@ -1,0 +1,17 @@
+<resources>
+    <color name="creme">#F3EDE4</color>
+    <color name="terracota">#B5502E</color>
+    <style name="Tilim" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/creme</item>
+        <item name="android:statusBarColor">@color/creme</item>
+        <item name="android:navigationBarColor">@color/creme</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+    <!-- tela do alarme: barras terracota com ícones claros, sem flash creme ao abrir -->
+    <style name="Tilim.Alarme">
+        <item name="android:windowBackground">@color/terracota</item>
+        <item name="android:statusBarColor">@color/terracota</item>
+        <item name="android:navigationBarColor">@color/terracota</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

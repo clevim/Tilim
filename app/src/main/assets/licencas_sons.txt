@@ -1,0 +1,17 @@
+Toques do Tilim
+
+Sirene, Sirene rápida, Bipe de despertador, Campainha: gerados pelo próprio Tilim (tools/gerar_sons.py).
+
+BigSoundBank (https://bigsoundbank.com), CC0 / domínio público:
+  Despertador antigo  #1375 Mechanical alarm clock, long ring #2
+  Telefone antigo     #3302 Socotel Loud Ringtones #1
+  Galo                #0283 Rooster Song
+  Relógio de pêndulo  #3360 1 Pendulum Chime
+  Sino de igreja      #0135 Church Bell
+  Caixinha de música  #0195 The music box Temps Des Cerises
+
+Android Open Source Project, frameworks/base/data/sounds/alarms (Argon, Hassium):
+  Melodia calma, Melodia alegre
+  Copyright (C) The Android Open Source Project
+  Licensed under the Apache License, Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0).
+  Arquivos cortados e com volume ajustado (tools/baixar_sons.sh).

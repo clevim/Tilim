@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Tilim</string>
+    <string name="widget_descricao">Mostra o próximo compromisso</string>
+</resources>
