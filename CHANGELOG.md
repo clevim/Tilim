@@ -2,6 +2,12 @@
 
 Mudanças de cada versão do Tilim. O texto de cada versão vira a descrição da Release no GitHub.
 
+## 1.6.1 — 2026-10-17
+
+### Correções
+- **Sempre dá para parar o alarme**: se o alarme estiver tocando e você abrir o Tilim, ele já mostra a tela com os botões **Parar** e **Adiar**.
+- Se o aviso do alarme for arrastado para o lado ou apagado sem querer, ele volta sozinho, até você tocar em **Parar** ou **Adiar**.
+
 ## 1.6.0 — 2026-10-10
 
 Primeira versão publicada no GitHub.
