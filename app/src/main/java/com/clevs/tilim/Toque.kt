@@ -127,6 +127,7 @@ object Toque {
     val atual = MutableStateFlow<Tocando?>(null)
     const val PARAR = "parar"
     const val ADIAR = "adiar"
+    const val RENOTIFICAR = "renotificar"
     const val ADIAR_MIN = 5L
     // ponytail: para sozinho depois de 10 min para não esgotar bateria; vira opção se pedirem
     const val TEMPO_MAX = 10 * 60_000L
@@ -161,6 +162,11 @@ class ToqueServico : Service() {
         when (intent?.action) {
             Toque.PARAR -> { stopSelf(); return START_NOT_STICKY }
             Toque.ADIAR -> { adiar(); stopSelf(); return START_NOT_STICKY }
+            // arrastaram a notificação (Android 14+ deixa): põe de volta enquanto tocar
+            Toque.RENOTIFICAR -> {
+                Toque.atual.value?.let { getSystemService(NotificationManager::class.java).notify(1, notificacao(it)) } ?: stopSelf()
+                return START_NOT_STICKY
+            }
         }
         val t = Tocando(intent?.getStringExtra("titulo").orEmpty(), intent?.getLongExtra("inicio", 0) ?: 0,
             intent?.getStringExtra("local").orEmpty())
@@ -278,6 +284,8 @@ class ToqueServico : Service() {
             .setFullScreenIntent(tela, true)
             .setContentIntent(tela)
             .setOngoing(true)
+            .setDeleteIntent(PendingIntent.getService(this, 5, Intent(this, ToqueServico::class.java)
+                .setAction(Toque.RENOTIFICAR), PendingIntent.FLAG_IMMUTABLE))
             .addAction(acao("Parar", Toque.PARAR, 3))
             .addAction(acao("Adiar ${Toque.ADIAR_MIN} minutos", Toque.ADIAR, 4))
             .build()

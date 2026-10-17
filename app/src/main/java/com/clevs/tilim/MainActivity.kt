@@ -242,6 +242,8 @@ class MainActivity : ComponentActivity() {
 
     override fun onResume() {
         super.onResume()
+        // tocando e a notificação sumiu (Android 14+ deixa arrastar): abrir o app leva direto ao "Parar"
+        if (Toque.atual.value != null) startActivity(Intent(this, ToqueActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         reagendar(this)
         sincronizar(this)
         volta++
